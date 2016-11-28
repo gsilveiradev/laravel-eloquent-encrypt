@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Traits\Guissilveira\EloquentEncrypt\Encrypt;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use Encrypt;
 
     protected $table = 'users';
 
@@ -27,5 +29,14 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
+    ];
+
+    /**
+     * The attributes that should be encrypted.
+     *
+     * @var array
+     */
+    protected $encryptable = [
+        'name'
     ];
 }

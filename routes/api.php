@@ -36,4 +36,22 @@ Route::group(['namespace' => 'Api'], function () {
             Route::get('/authentication/refresh_token', 'AuthenticationController@refreshToken');
         });
     });
+
+    /*
+    |--------------------------------------------------------------------------
+    | Routes with required login
+    |--------------------------------------------------------------------------
+    */
+    Route::group(['middleware' => ['jwt.auth']], function () {
+        /*
+        |--------------------------------------------------------------------------
+        | Routes for encrypted service
+        |--------------------------------------------------------------------------
+        */
+        Route::delete('/profiles/{id}', 'ProfilesController@destroy');
+        Route::put('/profiles/{id}', 'ProfilesController@update');
+        Route::get('/profiles/{id}', 'ProfilesController@show');
+        Route::post('/profiles', 'ProfilesController@store');
+        Route::get('/profiles', 'ProfilesController@index');
+    });
 });
