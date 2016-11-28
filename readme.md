@@ -38,7 +38,7 @@ php artisan migrate:refresh --seed
 
 ### Routes
 
-All the routes os this api are in ```routes/api.php```.
+All the routes of this api are in ```routes/api.php```.
 
 Real examples:
 
@@ -57,7 +57,7 @@ php artisan serve
 
 ## Solving the problem
 
-Created a Trait responsible to override the Model set and get Attributes to do the encrypt/decrypt.
+Created a Trait responsible for override the Model.class set and get Attributes to do the encrypt/decrypt.
 
 ```
 App/Traits/Guissilveira/EloquentEncrypt/Encrypt.php
@@ -65,7 +65,7 @@ App/Traits/Guissilveira/EloquentEncrypt/Encrypt.php
 
 Use case example in models:
 
-```
+```php
 <?php
 
 namespace App;
