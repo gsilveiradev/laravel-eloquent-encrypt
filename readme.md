@@ -47,6 +47,10 @@ POST http://localhost:8000/api/authentication/
 GET http://localhost:8000/api/profiles/ (protected URL, token must be present)
 ```
 
+### Authentication
+
+Send a POST to http://localhost:8000/api/authentication/ using e-mail=user@user.com and password=password params.
+
 ### Run and enjoy
 
 Run the serve command to test the Api endpoints on Postman:
